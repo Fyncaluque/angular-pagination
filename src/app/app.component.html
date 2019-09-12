@@ -1,0 +1,18 @@
+<mat-paginator [length]="datos.length" [pageSize]="page_size" [pageSizeOptions]="page_size_options" 
+(page)="handlePage($event)" showFirstLastButtons>
+</mat-paginator>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">titulo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of datos | paginate:page_size:page_number">
+      <td>{{user.id}}</td>
+      <td>{{user.title}}</td>
+    </tr>
+  </tbody>
+</table>
+
